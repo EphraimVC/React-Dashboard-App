@@ -21,8 +21,8 @@ const Sidebar = () => {
           </Link>
           <TooltipComponent content="Menu" position="BottomCenter">
             <button type="button"
-              onClick={() => { }}
-            className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block">
+             onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+            className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
               <MdOutlineCancel />
              </button>
           </TooltipComponent>
@@ -30,10 +30,11 @@ const Sidebar = () => {
         <div className='mt-10'>
           {links.map((item) => (
             // the div below with the key attribute makes each mapped title unique with a unique key number
-            <div key={ item.title}>
+            <div key={item.title}>
+              {/* the map array selects every title from every object in the dummy.js file and displays them in order  */}
               <p  className='text-gray-400 m-3 mt-4 uppercase'>
               {item.title}
-              {/* the map array selects every title from every object in the dummy.js file and displays them in order */}
+              
               </p>
               {item.links.map((link) => (
                 // NavLink component 
@@ -43,12 +44,12 @@ const Sidebar = () => {
                   // it gives every name value a unique key so it can be identified
                   key={link.name}
                   // insside the onclick, the setActiveMenu has a callback function , that uses the "prev"activeMenu to toggle between the latest value 
-                  onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+                  onClick={() => { }}
                   // is active is an opotion given by using the navlink component
                   className={({ isActive }) => 
                     isActive ? activeLink : normalLink}
                 >
-                  {/* link below select the icons in the dummy.js file to be dislpayed */}
+                  {/* link below select the icons in the dummy.js file to be displayed */}
                   {link.icon}
                   <span className='capitalize'>
                     {link.name}

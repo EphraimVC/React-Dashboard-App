@@ -8,7 +8,10 @@ import { ContextProvider } from './contexts/ContextProvider';
 
 // this hooks the react app to the html div with the id root 
 ReactDOM.render(
-  <ContextProvider>
-    <App />
-  </ContextProvider>,
-  document.getElementById('root'));
+  
+    <ContextProvider>
+      <App />
+      </ContextProvider>,
+  document.getElementById('root'),);
+
+
